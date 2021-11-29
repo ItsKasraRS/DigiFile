@@ -1,0 +1,127 @@
+@media (max-width: 767px) {
+    .header_menu-holder > ul {
+        display: none !important;
+    }
+    .site__menu-btn {
+        display: inline-block !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .site__message-title {
+        text-align: center;
+    }
+    .site__message-desc {
+        text-align: center;
+    }
+    .site__search-box {
+        display: none;
+    }
+    #rightMenu > ul {
+        display: flex !important;
+    }
+    #mobileSearch {
+        display: block !important;
+    }
+}
+
+@media (max-width: 1199px) {
+    .header__search {
+        margin: 0 !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .site__menu-btn {
+        display: inline-block !important;
+    }
+    #leftMenu {
+        display: none;
+    }
+    .site__category-menu {
+        display: none;
+    }
+
+    .landing-image {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 575px) {
+    .header__search {
+        margin: 0 20px !important;
+    }
+}
+
+@media (max-width: 475px) {
+    .site__search-box {
+        display: none;
+    }
+}
+
+@media (max-width: 360px) {
+    #rightMenu > ul {
+        display: none !important;
+    }
+}
+@media (max-width: 299px) {
+    .mobile__menu {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 1399px) {
+    .landing-image {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    table {
+      border: 0;
+    }
+  
+    table caption {
+      font-size: 1.3em;
+    }
+    
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: .625em;
+    }
+    
+    table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: .8em;
+      text-align: center;
+    }
+    
+    table td::before {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    table td:last-child {
+      border-bottom: 0;
+    }
+  }
+  

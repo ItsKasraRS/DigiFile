@@ -1,0 +1,158 @@
+<!-- Black overlay -->
+<div class="site__overlay" id="siteOverlay">
+
+</div>
+
+<!-- Top header -->
+<section class="site__header-section">
+    <div class="header__section">
+        <div class="container">
+            <div class="header__items-holder">
+                <a href="#" class="site__menu-btn" id="MobileMenuBtn"><i class="far fa-bars"></i></a>
+                <div class="header__brand">
+                    <a href="#">
+                        <img style="width: 50px;" src="/assets/images/Logo.png">
+                    </a>
+                </div>
+                <div class="header__menu">
+                    <div class="header_menu-holder" id="leftMenu">
+                        <ul>
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">Products</a>
+                            </li>
+                            <li>
+                                <a href="#">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header__search" style="flex: 1;">
+                        <div class="site__search-holder">
+                            <form>
+                                <div class="site__search-box">
+                                    <input type="text" class="searchbox" placeholder="Search product ...">
+                                    <button class="searchbox-submit"><i class="far fa-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="header_menu-holder" style="display: inline-block;" id="rightMenu">
+                        <ul style="    padding: 0;">
+                            <li>
+                                <a class="loginBtn clickable" (click)="LoginDialog()">Login</a>
+                            </li>
+                            <li>
+                                <a routerLink="register" class="registerBtn clickable">Register</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Menu -->
+<section class="site__category-menu">
+    <div class="category-menu">
+        <div class="container">
+            <div class="category-list">
+                <ul>
+                    <li class="DropdownCategory"><a href="#">Web <i class="far fa-chevron-down"></i></a>
+                        <ul class="dropCat">
+                            <li><a href="#">Asp.net core</a></li>
+                            <li><a href="#">PHP</a></li>
+                            <li><a href="#">Javascript</a></li>
+                        </ul>
+                    </li>
+                    <li class="DropdownCategory"><a href="#">Test <i class="far fa-chevron-down"></i></a>
+                        <ul class="dropCat">
+                            <li><a href="#">Asp.net core</a></li>
+                            <li><a href="#">PHP</a></li>
+                            <li><a href="#">Javascript</a></li>
+                        </ul>
+                    </li>
+                    <li class="DropdownCategory"><a href="#">Test First <i class="far fa-chevron-down"></i></a>
+                        <ul class="dropCat">
+                            <li><a href="#">Asp.net core</a></li>
+                            <li><a href="#">PHP</a></li>
+                            <li><a href="#">Javascript</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Mobile</a></li>
+                    <li><a href="#">Windows</a></li>
+                    <li><a href="#">Database</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mobile menu -->
+<section class="site__mobile-menu">
+    <div class="mobile__menu" id="MobileMenu">
+        <div class="mobile__menu-header">
+            <span style="font-weight: 600;font-size: 20px;">Menu</span>
+            <span id="closeMenu" class="menu-close" style="cursor: pointer;">
+                <i class="fal fa-times"></i>
+            </span>
+        </div>
+        <div class="mobile__menu-body">
+            <br>
+            <form>
+                <div class="site__search-box" id="mobileSearch" style="margin: 0 20px;">
+                    <input type="text" class="searchbox" placeholder="Search product ...">
+                    <button class="searchbox-submit"><i class="far fa-search"></i></button>
+                </div>
+            </form>
+            <ul class="mobile-menu">
+                <li><a href="#"><i class="far fa-chevron-right"></i> Home</a></li>
+                <li><a href="#"><i class="far fa-chevron-right"></i> Products</a></li>
+                <li><a href="#"><i class="far fa-chevron-right"></i> About us</a></li>
+                <li><a href="#"><i class="far fa-chevron-right"></i> Contact us</a></li>
+            </ul>
+        </div>
+        <div class="mobile__menu-header">
+            <span style="font-weight: 600;font-size: 20px;">Categories</span>
+        </div>
+        <div class="mobile__menu-body">
+            <ul class="mobile-menu">
+                <li class="mobile-dropdown" id="MobileDropdown"><a href="#"><i class="far fa-chevron-right"></i> Web</a>
+                    <i class="fas fa-plus"></i> <i class="fas fa-minus"></i>
+                    <ul class="mobile-menu ResDrop" id="ResDrop">
+                        <li><a href="#"><i class="far fa-chevron-right"></i> Mobile</a></li>
+                        <li><a href="#"><i class="far fa-chevron-right"></i> Windows</a></li>
+                        <li><a href="#"><i class="far fa-chevron-right"></i> Security</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-dropdown" id="MobileDropdown"><a href="#"><i class="far fa-chevron-right"></i>
+                        Mobile</a> <i class="fas fa-plus"></i> <i class="fas fa-minus"></i>
+                    <ul class="mobile-menu ResDrop" id="ResDrop">
+                        <li><a href="#"><i class="far fa-chevron-right"></i> Mobile</a></li>
+                        <li><a href="#"><i class="far fa-chevron-right"></i> Windows</a></li>
+                        <li><a href="#"><i class="far fa-chevron-right"></i> Security</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-dropdown" id="MobileDropdown"><a href="#"><i class="far fa-chevron-right"></i>
+                        Windows</a> <i class="fas fa-plus"></i> <i class="fas fa-minus"></i>
+                    <ul class="mobile-menu ResDrop" id="ResDrop">
+                        <li><a href="#"><i class="far fa-chevron-right"></i> Mobile</a></li>
+                        <li><a href="#"><i class="far fa-chevron-right"></i> Windows</a></li>
+                        <li><a href="#"><i class="far fa-chevron-right"></i> Security</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-dropdown" id="MobileDropdown"><a href="#"><i class="far fa-chevron-right"></i>
+                        Security</a> <i class="fas fa-plus"></i> <i class="fas fa-minus"></i>
+                    <ul class="mobile-menu ResDrop" id="ResDrop">
+                        <li><a href="#"><i class="far fa-chevron-right"></i> Mobile</a></li>
+                        <li><a href="#"><i class="far fa-chevron-right"></i> Windows</a></li>
+                        <li><a href="#"><i class="far fa-chevron-right"></i> Security</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
