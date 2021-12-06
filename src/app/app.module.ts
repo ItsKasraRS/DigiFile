@@ -20,7 +20,9 @@ import { MainHeaderComponent } from './Layouts/main-header/main-header.component
 import { MainFooterComponent } from './Layouts/main-footer/main-footer.component';
 import { TestComponent } from './Pages/test/test.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -36,6 +38,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     TestComponent,
   ],
   imports: [
+    HttpClientModule,
    MatFormFieldModule,
    MatDialogModule,
    MatInputModule,
@@ -43,7 +46,12 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
    BrowserModule,
    AppRoutingModule,
    BrowserAnimationsModule,
-   BrowserAnimationsModule
+   BrowserAnimationsModule,
+   FormsModule,
+   ReactiveFormsModule,
+   ToastrModule.forRoot({
+    positionClass: 'toast-bottom-center'
+   }),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: FileShopInterceptor, multi: true },

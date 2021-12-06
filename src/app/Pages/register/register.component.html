@@ -8,37 +8,54 @@
                 </div>
                 <hr>
                 <div class="dfpanel-body">
-                    <form class="example-form">
+                    <form class="example-form" method="POST" [formGroup]="user" (ngSubmit)="register()">
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-12">
                                     <mat-form-field appearance="outline" class="full-width" style="margin-bottom: 10px;">
                                         <mat-label>Username</mat-label>
-                                        <input type="text" matInput>
+                                        <input type="text" matInput formControlName="username">
+                                        <mat-error *ngIf="user.controls.username.errors?.required && user.controls.username.touched">please enter username</mat-error>
+                                        <mat-error *ngIf="user.controls.username.errors?.maxlength && user.controls.username.touched">username can't be more than 200 characters</mat-error>
+                                        <mat-error *ngIf="user.controls.username.errors?.minlength && user.controls.username.touched">username must be more than 5 characters</mat-error>
                                     </mat-form-field>
                                 </div>
                                 <div class="col-12">
                                     <mat-form-field appearance="outline" class="full-width" style="margin-bottom: 10px;">
                                         <mat-label>Phone number</mat-label>
-                                        <input type="email" matInput>
+                                        <input type="text" matInput formControlName="mobile">
+                                        <mat-error *ngIf="user.controls.mobile.errors?.required && user.controls.mobile.touched">please enter phone number</mat-error>
+                                        <mat-error *ngIf="user.controls.mobile.errors?.maxlength && user.controls.mobile.touched">phone number can't be more than 16 characters</mat-error>
+                                        <mat-error *ngIf="user.controls.mobile.errors?.minlength && user.controls.mobile.touched">phone number must be more than 5 characters</mat-error>
                                     </mat-form-field>
                                 </div>
                                 <div class="col-12">
                                     <mat-form-field appearance="outline" class="full-width" style="margin-bottom: 10px;">
                                         <mat-label>Email</mat-label>
-                                        <input type="email" matInput>
+                                        <input type="email" matInput formControlName="email">
+                                        
+                                        <mat-error *ngIf="user.controls.email.errors?.required && user.controls.email.touched">please enter email</mat-error>
+                                        <mat-error *ngIf="user.controls.email.errors?.maxlength && user.controls.email.touched">email can't be more than 200 characters</mat-error>
+                                        <mat-error *ngIf="user.controls.email.errors?.email && user.controls.email.touched">email isn't valid</mat-error>
                                     </mat-form-field>
                                 </div>
                                 <div class="col-12">
                                     <mat-form-field appearance="outline" class="full-width" style="margin-bottom: 10px;">
                                         <mat-label>Password</mat-label>
-                                        <input type="passwor" matInput>
+                                        <input type="passwor" matInput formControlName="password">
+                                        <mat-error *ngIf="user.controls.password.errors?.required && user.controls.password.touched">please enter password</mat-error>
+                                        <mat-error *ngIf="user.controls.password.errors?.maxlength && user.controls.password.touched">password can't be more than 200 characters</mat-error>
+                                        <mat-error *ngIf="user.controls.password.errors?.minlength && user.controls.password.touched">password must be more than 8 characters</mat-error>
                                     </mat-form-field>
                                 </div>
                                 <div class="col-12">
                                     <mat-form-field appearance="outline" class="full-width" style="margin-bottom: 10px;">
                                         <mat-label>Confirm password</mat-label>
-                                        <input type="password" matInput>
+                                        <input type="password" matInput formControlName="rePassword">
+                                        <mat-error *ngIf="user.controls.rePassword.errors?.required && user.controls.rePassword.touched">please enter confirm password</mat-error>
+                                        <mat-error *ngIf="user.controls.rePassword.errors?.maxlength && user.controls.rePassword.touched">confirm password can't be more than 200 characters</mat-error>
+                                        <mat-error *ngIf="user.controls.rePassword.errors?.minlength && user.controls.rePassword.touched">confirm password must be more than 8 characters</mat-error>
+                                        <mat-error *ngIf="user.controls.rePassword.errors?.passwordNotMatch && user.controls.rePassword.touched">passwords must be same</mat-error>
                                     </mat-form-field>
                                 </div>
                                 <div class="col-12">
