@@ -1,0 +1,57 @@
+<div class="container" style="margin-top: 100px;">
+    <div class="row">
+        <div class="col-12 col-md-2 col-lg-3"></div>
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="dfpanel">
+                <div class="heading">
+                    Activate account
+                </div>
+                <hr>
+                <div class="dfpanel-body">
+                    <p class="text-center">
+                        <mat-spinner style="display: block;margin: auto" [diameter]="70" *ngIf="!loaded"></mat-spinner>
+                    </p>
+
+                    <div class="dfpanel-icon" style="margin: auto;" *ngIf="loaded">
+                        <svg *ngIf="enable" style="width: 100px;margin: 50px auto 70px;display:block" fill="#1bc970"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                            x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000"
+                            xml:space="preserve">
+                            <g>
+                                <g transform="translate(0.000000,511.000000) scale(0.100000,-0.100000)">
+                                    <path
+                                        d="M4509.8,4986.6c-319.9-32.7-691.3-112.1-1027.5-221.9C1630.4,4159.9,308.6,2508.9,121.8,565.9C37.7-295.9,198.8-1209,577.2-1993.6c1106.9-2305,3752.9-3374.5,6144.2-2484.8c644.5,238.2,1310.1,677.2,1795.8,1179.3c971.5,1006.5,1475.9,2389,1368.5,3752.9c-81.7,1041.6-439,1943-1092.9,2751C7774.6,4465.9,6130.5,5150.1,4509.8,4986.6z M5735.9,4708.7C6712,4552.3,7590.1,4103.9,8293.1,3401c714.6-714.6,1167.7-1618.4,1321.8-2627.2c51.4-341,51.4-985.5,0-1331.1C9463-1564,9007.7-2467.7,8293.1-3184.7c-717-714.6-1620.7-1170-2627.2-1321.8c-345.6-51.4-990.2-51.4-1331.1,0C2807.4-4272.9,1520.6-3341.1,829.4-1963.3C257.2-826,182.5,530.8,626.2,1719.5C1259.1,3415,2809.7,4596.6,4605.6,4755.4C4909.2,4783.5,5401.9,4762.4,5735.9,4708.7z" />
+                                    <path
+                                        d="M5859.6,255.3L3926-1678.4L3066.6-819c-604.9,604.9-873.4,857.1-908.5,857.1c-49,0-123.8-77.1-123.8-126.1c0-49,1854.2-1882.3,1903.3-1882.3c51.4,0,3937.3,3867.3,3995.7,3977.1c49.1,91.1-7,179.8-114.4,179.8C7802.6,2186.6,6922.2,1317.8,5859.6,255.3z" />
+                                </g>
+                            </g>
+                        </svg>
+                        <svg *ngIf="enable" style="width: 100px;margin: 50px auto 70px;display:block" fill="#ff3f3f" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                            x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000"
+                            xml:space="preserve">
+                            <g>
+                                <path
+                                    d="M710,298.4c-8.5-8.6-22.2-8.6-30.7-0.1L499.2,477.8L320.7,298.4c-8.4-8.5-22.2-8.5-30.7,0c-8.5,8.5-8.5,22.3,0,30.8l178.5,179.4l-180,179.4l-0.1,30.8c4.3,4.3,9.8,6.4,15.4,6.4c5.5,0,11.1-2.1,15.3-6.4l180-179.4l180.2,181.1c4.2,4.3,9.8,6.4,15.4,6.4c5.5,0,11.1-2.1,15.3-6.4c8.5-8.5,8.5-22.3,0-30.8L529.9,508.6l180.1-179.5C718.5,320.7,718.5,306.9,710,298.4z M951.5,309.3c-24.7-58.3-60-110.7-105-155.7c-45-45-97.4-80.3-155.8-105C630.3,23,566.1,10.1,500,10.1c-66.1,0-130.3,13-190.7,38.5c-58.4,24.7-110.8,60-155.7,105c-45,45-80.3,97.4-105,155.7C23,369.7,10,433.9,10,500c0,66.1,13,130.3,38.5,190.7c24.7,58.3,60,110.7,105,155.7c45,45,97.4,80.3,155.7,105c60.4,25.6,124.6,38.5,190.7,38.5c66.1,0,130.3-12.9,190.7-38.5c58.4-24.7,110.8-60,155.8-105c45-45,80.3-97.4,105-155.7C977,630.3,990,566.1,990,500C990,433.9,977,369.7,951.5,309.3z M500,953.9C249.6,953.9,46,750.3,46,500C46,249.7,249.6,46,500,46C750.4,46,954,249.7,954,500C954,750.3,750.4,953.9,500,953.9z" />
+                            </g>
+                        </svg>
+                    </div>
+                    <h5 style="font-weight: 600;" *ngIf="loaded && enable">
+                        Dear kasra,
+                    </h5>
+                    <p *ngIf="loaded && enable">
+                        Your account has been activated successfully.
+                    </p>
+                    <p *ngIf="loaded && enable">
+                        now you can sign in to your account.
+                    </p>
+                    <p *ngIf="loaded && !enable" class="text-center">
+                        User not found
+                    </p>
+                    <a *ngIf="loaded" routerLink="/" class="CBtn CBtn-block CBtn-light CBtn-warning"><i class="far fa-home"
+                            style="margin-right: 10px;"></i> Go home</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-2 col-lg-3"></div>
+    </div>
+</div>

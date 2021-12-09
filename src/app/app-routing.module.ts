@@ -6,6 +6,7 @@ import { HomeComponent } from './Pages/home/home.component';
 import { MainLayoutComponent } from './Layouts/main-layout/main-layout.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ActivateAccountComponent } from './Pages/activate-account/activate-account.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
     path: '',
     component: NoLayoutComponent,
     children: [
+      { path: 'ActivateAccount/:code', component: ActivateAccountComponent, data: { title: 'Activate account' }}
     ]
   },
 ];
