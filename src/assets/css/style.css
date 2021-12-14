@@ -93,6 +93,7 @@
 .header__menu > .header_menu-holder > ul {
     margin: auto;
     display: flex;
+    align-items: center;
 }
 
 .site__menu-btn {
@@ -526,4 +527,12 @@
   .dfpanel > .heading {
       font-size: 22px;
       font-weight: 600;
+  }
+
+  .profileMenu > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: #ccc 2px solid;
+    padding: 4px;
   }

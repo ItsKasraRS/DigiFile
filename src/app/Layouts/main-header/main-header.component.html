@@ -40,11 +40,19 @@
                     </div>
                     <div class="header_menu-holder" style="display: inline-block;" id="rightMenu">
                         <ul style="    padding: 0;">
-                            <li>
+                            <li *ngIf="!isAuthenticated">
                                 <a class="loginBtn clickable" (click)="LoginDialog()">Login</a>
                             </li>
-                            <li>
+                            <li *ngIf="!isAuthenticated">
                                 <a routerLink="register" class="registerBtn clickable">Register</a>
+                            </li>
+                            <li *ngIf="isAuthenticated">
+                                <a routerLink="register" class="clickable profileMenu">
+                                    <img src="/assets/images/user.png">
+                                </a>
+                            </li>
+                            <li *ngIf="isAuthenticated">
+                                <a routerLink="register" class="clickable">Logout</a>
                             </li>
                         </ul>
                     </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
@@ -7,8 +7,9 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  constructor(private router: Router, private activatedRoute:    ActivatedRoute, private titleService: Title) {
+export class AppComponent implements AfterViewInit {
+  loading: boolean = true;
+  constructor(private router: Router, private activatedRoute:    ActivatedRoute, private titleService: Title,private cdr: ChangeDetectorRef) {
     router.events.subscribe(event => {
       if(event instanceof NavigationEnd) {
         var title = this.getTitle(router.routerState, router.routerState.root).join('-');
@@ -16,8 +17,10 @@ export class AppComponent {
       }
     });
   }
-  
-
+  ngAfterViewInit(): void {
+      this.loading = false;
+      this.cdr.detectChanges();
+  }
   getTitle(state, parent) {
     var data = [];
     if(parent && parent.snapshot.data && parent.snapshot.data.title) {

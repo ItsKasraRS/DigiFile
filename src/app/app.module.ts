@@ -2,6 +2,8 @@ import { FileShopInterceptor } from './Utilities/Interceptor/file-shop.intercept
 import { AccountService } from './services/account/account.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgxLoadingModule } from 'ngx-loading';
+
 
 // Material Components
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -9,7 +11,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import {ObserversModule} from '@angular/cdk/observers';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -46,6 +48,7 @@ import { ActivateAccountComponent } from './Pages/activate-account/activate-acco
    MatFormFieldModule,
    MatDialogModule,
    MatInputModule,
+   ObserversModule,
    MatProgressSpinnerModule,
    MatCheckboxModule,
    BrowserModule,
@@ -54,6 +57,11 @@ import { ActivateAccountComponent } from './Pages/activate-account/activate-acco
    BrowserAnimationsModule,
    FormsModule,
    ReactiveFormsModule,
+   NgxLoadingModule.forRoot({
+    backdropBackgroundColour: 'rgba(255, 255, 255, 1)',
+    primaryColour: '#000000',
+    secondaryColour: '#000000',
+   }),
    ToastrModule.forRoot({
     positionClass: 'toast-bottom-center'
    }),
