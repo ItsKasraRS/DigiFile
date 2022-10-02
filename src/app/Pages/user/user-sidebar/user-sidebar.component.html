@@ -4,13 +4,13 @@
             <img src="/assets/images/user.png">
         </div>
         <div class="sidebar-profile-detail">
-            <span class="SP_username">Kasra RS</span>
-            <span class="SP_email">kasra.rs@gmail.com</span>
+            <span class="SP_username">{{userInfo?.username}}</span>
+            <span class="SP_email">{{userInfo?.email}}</span>
         </div>
     </div>
     <hr>
     <ul class="sidebar-list">
-        <li class="active"><a href="#"><i class="far fa-tachometer" style="margin-right: 10px;"></i>Dashboard</a></li>
+        <li routerLinkActive="active"><a routerLink="/user/dashboard"><i class="far fa-tachometer" style="margin-right: 10px;"></i>Dashboard</a></li>
         <li><a href="#"><i class="far fa-user-edit" style="margin-right: 10px;"></i>Edit profile</a></li>
         <li><a href="#"><i class="far fa-lock" style="margin-right: 10px;"></i>Change password</a></li>
         <li><a href="#"><i class="far fa-file" style="margin-right: 10px;"></i>My orders</a></li>

@@ -3,6 +3,7 @@ import { ChangeDetectorRef, Component, OnInit, AfterViewInit } from '@angular/co
 import {MatDialog} from '@angular/material/dialog';
 import { AccountService } from 'src/app/services/account/account.service';
 import { BehaviorSubject } from 'rxjs';
+import { CategoryService } from 'src/app/services/category/category.service';
 
 @Component({
   selector: 'app-main-header',
@@ -11,12 +12,16 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class MainHeaderComponent implements OnInit {
   isAuthenticated = false;
-  constructor(private dialog: MatDialog, private api: AccountService, private cdr: ChangeDetectorRef) 
+  categories;
+  constructor(private dialog: MatDialog, private api: AccountService, private cdr: ChangeDetectorRef, private categoryService: CategoryService) 
   { 
   }
 
   ngOnInit(): void {
     this.isLoggedIn();
+    this.categoryService.getCategories().subscribe(res=> {
+      this.categories = res.data;
+    })
   }
   isLoggedIn() {
     this.api.checkAuth().subscribe(res=> {

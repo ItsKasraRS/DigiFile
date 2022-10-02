@@ -31,6 +31,7 @@ import { ActivateAccountComponent } from './Pages/activate-account/activate-acco
 import { AppGuard } from './guards/app.guard';
 import { DashboardComponent } from './Pages/user/dashboard/dashboard.component';
 import { UserSidebarComponent } from './Pages/user/user-sidebar/user-sidebar.component';
+import { CategoriesFilter } from './Utilities/AppFilters';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,10 @@ import { UserSidebarComponent } from './Pages/user/user-sidebar/user-sidebar.com
     TestComponent,
     ActivateAccountComponent,
     DashboardComponent,
-    UserSidebarComponent
+    UserSidebarComponent,
+    
+    //Pipes
+    CategoriesFilter,
   ],
   imports: [
     HttpClientModule,

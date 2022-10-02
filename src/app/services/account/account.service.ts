@@ -33,14 +33,7 @@ export class AccountService {
   setAuth(val: boolean) {
     this.isAuthenticated.next(val);
   }
-  checkAuthForGuard() {
-    return this.http.post('account/check-auth', null).pipe(
-      map((res: Response) => {
-        res
-      })
-    );
-    // return this.http.post('account/check-auth', null).subscribe(res=> {
-    //   return res;
-    // })
+  getSidebarInfo(userId: number): Observable<any> {
+    return this.http.get('account/get-sidebar-info/'+userId);
   }
 }

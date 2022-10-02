@@ -69,7 +69,12 @@
         <div class="container">
             <div class="category-list">
                 <ul>
-                    <li class="DropdownCategory"><a href="#">Web <i class="far fa-chevron-down"></i></a>
+                    <li class="DropdownCategory" *ngFor="let item of categories | categoriesFilter: null"><a href="#">{{item.title}} <i class="far fa-chevron-down"></i></a>
+                        <ul class="dropCat">
+                            <li *ngFor="let sub of categories | categoriesFilter: item.categoryId"><a href="#">{{sub.title}}</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li class="DropdownCategory"><a href="#">Web <i class="far fa-chevron-down"></i></a>
                         <ul class="dropCat">
                             <li><a href="#">Asp.net core</a></li>
                             <li><a href="#">PHP</a></li>
@@ -92,7 +97,7 @@
                     </li>
                     <li><a href="#">Mobile</a></li>
                     <li><a href="#">Windows</a></li>
-                    <li><a href="#">Database</a></li>
+                    <li><a href="#">Database</a></li> -->
                 </ul>
             </div>
         </div>
