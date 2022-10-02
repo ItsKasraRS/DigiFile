@@ -7,6 +7,8 @@ import { MainLayoutComponent } from './Layouts/main-layout/main-layout.component
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ActivateAccountComponent } from './Pages/activate-account/activate-account.component';
+import { AppGuard } from './guards/app.guard';
+import { DashboardComponent } from './Pages/user/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -14,15 +16,16 @@ const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       { path: '', component: HomeComponent, data: { title: 'Home' } },
-      { path: 'test', component: TestComponent, data: { title: 'Test' } },
-      { path: 'register', component: RegisterComponent, data: { title: 'Register' }  }
+      { path: 'register', component: RegisterComponent, data: { title: 'Register' }  },
+      { path: 'user/dashboard', component: DashboardComponent, canActivate: [AppGuard], data: { title: 'Dashboard' } }
     ]
   },
   {
     path: '',
     component: NoLayoutComponent,
     children: [
-      { path: 'ActivateAccount/:code', component: ActivateAccountComponent, data: { title: 'Activate account' }}
+      { path: 'ActivateAccount/:code', component: ActivateAccountComponent, data: { title: 'Activate account' }},
+      { path: 'test', component: TestComponent, data: { title: 'Test' }, canActivate: [AppGuard] },
     ]
   },
 ];

@@ -3,7 +3,7 @@ import { RegisterDTO } from './../../DTOs/Account/registerDTO';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { UserCreds } from 'src/app/DTOs/Account/UserCreds';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -28,9 +28,19 @@ export class AccountService {
     return this.http.get('account/getUserById/'+id);
   }
   Authenticated(): Observable<boolean> {
-    return this.isAuthenticated.asObservable();
+    return this.isAuthenticated;
   }
   setAuth(val: boolean) {
     this.isAuthenticated.next(val);
+  }
+  checkAuthForGuard() {
+    return this.http.post('account/check-auth', null).pipe(
+      map((res: Response) => {
+        res
+      })
+    );
+    // return this.http.post('account/check-auth', null).subscribe(res=> {
+    //   return res;
+    // })
   }
 }

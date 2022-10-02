@@ -28,7 +28,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { ActivateAccountComponent } from './Pages/activate-account/activate-account.component';
-
+import { AppGuard } from './guards/app.guard';
+import { DashboardComponent } from './Pages/user/dashboard/dashboard.component';
+import { UserSidebarComponent } from './Pages/user/user-sidebar/user-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { ActivateAccountComponent } from './Pages/activate-account/activate-acco
     MainFooterComponent,
     TestComponent,
     ActivateAccountComponent,
+    DashboardComponent,
+    UserSidebarComponent
   ],
   imports: [
     HttpClientModule,
@@ -68,7 +72,8 @@ import { ActivateAccountComponent } from './Pages/activate-account/activate-acco
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: FileShopInterceptor, multi: true },
-    AccountService
+    AccountService,
+    AppGuard
   ],
   bootstrap: [AppComponent]
 })

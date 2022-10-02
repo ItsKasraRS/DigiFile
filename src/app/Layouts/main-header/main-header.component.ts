@@ -13,22 +13,23 @@ export class MainHeaderComponent implements OnInit {
   isAuthenticated = false;
   constructor(private dialog: MatDialog, private api: AccountService, private cdr: ChangeDetectorRef) 
   { 
-    this.isLoggedIn();
   }
 
   ngOnInit(): void {
-    this.api.Authenticated().subscribe(res => {
-      this.isAuthenticated = res;
-    });
+    this.isLoggedIn();
   }
   isLoggedIn() {
     this.api.checkAuth().subscribe(res=> {
       if(res.status === "Success") {
         this.api.setAuth(true);
       }
-      // else if (res.status === "UnAuthorized") {
-      // }
+      else {
+        this.api.setAuth(false);
+      }
     })
+    this.api.Authenticated().subscribe(res=> {
+      this.isAuthenticated = res;      
+    });
   }
 
   LoginDialog() {

@@ -44,15 +44,15 @@
                                 <a class="loginBtn clickable" (click)="LoginDialog()">Login</a>
                             </li>
                             <li *ngIf="!isAuthenticated">
-                                <a routerLink="register" class="registerBtn clickable">Register</a>
+                                <a routerLink="/register" class="registerBtn clickable">Register</a>
                             </li>
                             <li *ngIf="isAuthenticated">
-                                <a routerLink="register" class="clickable profileMenu">
+                                <a routerLink="/user/dashboard" class="clickable profileMenu">
                                     <img src="/assets/images/user.png">
                                 </a>
                             </li>
                             <li *ngIf="isAuthenticated">
-                                <a routerLink="register" class="clickable">Logout</a>
+                                <a id="CartBtn" class="clickable CBtn CBtn-light CBtn-warning home-cart-btn" style="padding: 5px 20px;border-radius: 4px;"><i class="far fa-shopping-cart"></i><span class="cart-count">1</span></a>
                             </li>
                         </ul>
                     </div>
@@ -98,7 +98,6 @@
         </div>
     </div>
 </section>
-
 <!-- Mobile menu -->
 <section class="site__mobile-menu">
     <div class="mobile__menu" id="MobileMenu">

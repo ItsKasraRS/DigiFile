@@ -18,7 +18,6 @@ export class AppComponent implements AfterViewInit {
     });
   }
   ngAfterViewInit(): void {
-      this.loading = false;
       this.cdr.detectChanges();
   }
   getTitle(state, parent) {
