@@ -36,4 +36,7 @@ export class AccountService {
   getSidebarInfo(userId: number): Observable<any> {
     return this.http.get('account/get-sidebar-info/'+userId);
   }
+  getDashboardInfo(userId: number): Observable<any> {
+    return this.http.get('account/get-dashboard-info/'+userId);
+  }
 }

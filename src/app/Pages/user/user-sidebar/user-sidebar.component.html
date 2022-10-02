@@ -1,7 +1,7 @@
 <aside class="user-sidebar mb-5">
     <div class="sidebar-profile">
         <div class="sidebar-profile-img">
-            <img src="/assets/images/user.png">
+            <img [src]="userImage + userInfo?.image">
         </div>
         <div class="sidebar-profile-detail">
             <span class="SP_username">{{userInfo?.username}}</span>
@@ -16,7 +16,7 @@
         <li><a href="#"><i class="far fa-file" style="margin-right: 10px;"></i>My orders</a></li>
         <li><a href="#"><i class="far fa-comment" style="margin-right: 10px;"></i>Comments</a></li>
         <li><a href="#"><i class="far fa-headphones" style="margin-right: 10px;"></i>Tickets</a></li>
-        <li><a href="#" class="text-danger"><i class="far fa-sign-out" style="margin-right: 10px;"></i>Sign out</a></li>
+        <li><a class="text-danger cursor-pointer" (click)="logout()"><i class="far fa-sign-out" style="margin-right: 10px;"></i>Sign out</a></li>
     </ul>
     <div style="margin: 10px 20px;">
         <button class="CBtn CBtn-block CBtn-light CBtn-warning" style="border-radius: 3px;"><i class="far fa-user-plus" style="margin-right: 10px;"></i>Become a seller</button>

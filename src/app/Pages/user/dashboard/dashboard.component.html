@@ -19,7 +19,7 @@
                                         <img src="/assets/images/form.png">
                                     </div>
                                     <div class="widget-data">
-                                        <span class="widget-value">12</span>
+                                        <span class="widget-value">{{userInfo?.successOrders}}</span>
                                         <span class="widget-title">Success orders</span>
                                     </div>
                                 </div>
@@ -30,7 +30,7 @@
                                         <img src="/assets/images/comments.png">
                                     </div>
                                     <div class="widget-data">
-                                        <span class="widget-value">12</span>
+                                        <span class="widget-value">{{userInfo?.comments}}</span>
                                         <span class="widget-title">Comments</span>
                                     </div>
                                 </div>
@@ -41,7 +41,7 @@
                                         <img src="/assets/images/order.png">
                                     </div>
                                     <div class="widget-data">
-                                        <span class="widget-value">12</span>
+                                        <span class="widget-value">{{userInfo?.failedOrders}}</span>
                                         <span class="widget-title">Failed orders</span>
                                     </div>
                                 </div>
@@ -56,10 +56,10 @@
                             <div class="col-12 col-md-8">
                                 <div class="user-information">
                                     <div class="info-data">
-                                        <p class="justify-content-lg-between justify-content-sm-start"><span class="user-info-title"><i class="far fa-user"></i> Username:</span> <span class="user-info-value">Kasra_RS</span></p>
-                                        <p class="justify-content-lg-between justify-content-sm-start"><span class="user-info-title"><i class="far fa-phone"></i> Mobile number: </span><span class="user-info-value">0909090909</span></p>
-                                        <p class="justify-content-lg-between justify-content-sm-start"><span class="user-info-title"><i class="far fa-envelope"></i> Email address: </span><span class="user-info-value">codelearn456@gmail.com</span></p>
-                                        <p class="justify-content-lg-between justify-content-sm-start"><span class="user-info-title"><i class="far fa-calendar"></i> Registery date: </span><span class="user-info-value">4 Feb, 2022</span></p>
+                                        <p class="justify-content-lg-between justify-content-sm-start"><span class="user-info-title"><i class="far fa-user"></i> Username:</span> <span class="user-info-value">{{userInfo?.username}}</span></p>
+                                        <p class="justify-content-lg-between justify-content-sm-start"><span class="user-info-title"><i class="far fa-phone"></i> Mobile number: </span><span class="user-info-value">{{userInfo?.mobile}}</span></p>
+                                        <p class="justify-content-lg-between justify-content-sm-start"><span class="user-info-title"><i class="far fa-envelope"></i> Email address: </span><span class="user-info-value">{{userInfo?.email}}</span></p>
+                                        <p class="justify-content-lg-between justify-content-sm-start"><span class="user-info-title"><i class="far fa-calendar"></i> Registery date: </span><span class="user-info-value">{{userInfo?.registerDate | date}}</span></p>
                                     </div>
                                 </div>
                             </div>

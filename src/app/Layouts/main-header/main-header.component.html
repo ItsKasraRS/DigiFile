@@ -48,7 +48,7 @@
                             </li>
                             <li *ngIf="isAuthenticated">
                                 <a routerLink="/user/dashboard" class="clickable profileMenu">
-                                    <img src="/assets/images/user.png">
+                                    <img [src]="userInfo?.image !== null ? userImage + userInfo?.image : ''">
                                 </a>
                             </li>
                             <li *ngIf="isAuthenticated">
