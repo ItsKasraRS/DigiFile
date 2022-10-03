@@ -12,4 +12,8 @@ export class ProductService {
   getLatestProducts(): Observable<any> {
     return this.http.get('product/get-latest-products');
   }
+
+  getPopularProducts(): Observable<any> {
+    return this.http.get('product/get-popular-products');
+  }
 }

@@ -1,0 +1,39 @@
+.search-box {
+    display: flex;
+}
+
+.search-input {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 0;
+    background-color: #efefef;
+    display: inline-block;
+}
+
+.search-box > button {
+    padding: 0 20px;
+    border: 0;
+    margin-left: 5px;
+    border-radius: 5px;
+    background-color: #4962ff;
+    color: #fff;
+}
+
+.categories-filter {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.categories-filter > li > ul {
+    list-style-type: none;
+}
+
+.categories-filter > li > ul > li {
+    line-height: 40px;
+}
+
+.categories-filter > li {
+    line-height: 40px;
+}

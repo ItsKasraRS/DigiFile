@@ -1,0 +1,15 @@
+<div class="site__product">
+    <div class="site__product-image">
+        <a href="#">
+            <img [src]="productImage + product.image" style="width: 320px;height: 227px;">
+        </a>
+    </div>
+    <div class="site__product-body">
+        <a href="#">
+            {{product.title}}
+        </a>
+        <div class="site__product-price">
+            <span>{{product.price | currency}}</span>
+        </div>
+    </div>
+</div>

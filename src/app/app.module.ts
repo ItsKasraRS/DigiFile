@@ -32,6 +32,8 @@ import { AppGuard } from './guards/app.guard';
 import { DashboardComponent } from './Pages/user/dashboard/dashboard.component';
 import { UserSidebarComponent } from './Pages/user/user-sidebar/user-sidebar.component';
 import { CategoriesFilter } from './Utilities/AppFilters';
+import { SingleProductComponent } from './Pages/product/single-product/single-product.component';
+import { AllProductsComponent } from './Pages/product/all-products/all-products.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { CategoriesFilter } from './Utilities/AppFilters';
     
     //Pipes
     CategoriesFilter,
+         SingleProductComponent,
+         AllProductsComponent,
   ],
   imports: [
     HttpClientModule,

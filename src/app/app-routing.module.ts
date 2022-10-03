@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ActivateAccountComponent } from './Pages/activate-account/activate-account.component';
 import { AppGuard } from './guards/app.guard';
 import { DashboardComponent } from './Pages/user/dashboard/dashboard.component';
+import { AllProductsComponent } from './Pages/product/all-products/all-products.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
     children: [
       { path: '', component: HomeComponent, data: { title: 'Home' } },
       { path: 'register', component: RegisterComponent, data: { title: 'Register' }  },
-      { path: 'user/dashboard', component: DashboardComponent, canActivate: [AppGuard], data: { title: 'Dashboard' } }
+      { path: 'user/dashboard', component: DashboardComponent, canActivate: [AppGuard], data: { title: 'Dashboard' } },
+      { path: 'products', component: AllProductsComponent, data: { title: 'Products' } }
     ]
   },
   {

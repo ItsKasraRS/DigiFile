@@ -16,9 +16,8 @@ new Splide('.latestproducts', {
 }).mount();
 
 new Splide('.popularproducts', {
-    type: 'loop',
     perPage: 4,
-    focus: 'center',
+    focus: '',
     breakpoints: {
         1000: {
             perPage: 3
