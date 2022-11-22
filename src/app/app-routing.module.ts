@@ -19,7 +19,7 @@ const routes: Routes = [
       { path: '', component: HomeComponent, data: { title: 'Home' } },
       { path: 'register', component: RegisterComponent, data: { title: 'Register' }  },
       { path: 'user/dashboard', component: DashboardComponent, canActivate: [AppGuard], data: { title: 'Dashboard' } },
-      { path: 'products', component: AllProductsComponent, data: { title: 'Products' } }
+      { path: 'products', component: AllProductsComponent, data: { title: 'Products' }, runGuardsAndResolvers: 'always', }
     ]
   },
   {
@@ -33,7 +33,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

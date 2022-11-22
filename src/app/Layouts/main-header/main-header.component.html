@@ -30,9 +30,9 @@
                     </div>
                     <div class="header__search" style="flex: 1;">
                         <div class="site__search-holder">
-                            <form>
+                            <form method="get" (ngSubmit)="searchProduct()">
                                 <div class="site__search-box">
-                                    <input type="text" class="searchbox" placeholder="Search product ...">
+                                    <input type="text" class="searchbox" placeholder="Search product ..." [(ngModel)]="searchTitle" name="searchTitle">
                                     <button class="searchbox-submit"><i class="far fa-search"></i></button>
                                 </div>
                             </form>

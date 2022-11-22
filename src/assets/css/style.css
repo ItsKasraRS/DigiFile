@@ -1,6 +1,7 @@
 /* Imports */
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import url('responsive.css');
 
 
@@ -11,7 +12,7 @@
     border-radius: 10px;
     background: #eee;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     border: 0;
 }
 
@@ -45,7 +46,7 @@
 .CPanel>.CP_header>header {
     position: relative;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
     border-bottom: solid 3px #eee;
     padding-bottom: 10px;
 }
@@ -60,7 +61,7 @@
 /* Content Styles */
 
 * {
-    font-family: 'Nunito', sans-serif;
+    font-family: Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
     outline: 0 !important;
     margin: 0;
     padding: 0;
@@ -134,7 +135,7 @@
 .header__menu>.header_menu-holder>ul>li>a {
     color: #4b4b4b;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     margin: 0 20px;
     transition: all .3s;
 }
@@ -155,7 +156,7 @@
 
 .site__products-title>header>span {
     font-size: 23px !important;
-    font-weight: 600;
+    font-weight: 500;
     border-bottom: solid 3px #4962ff;
     padding: 0 30px;
     padding-left: 0;
@@ -172,13 +173,14 @@
 .site__product {
     width: 100%;
     border: solid 1px #eee;
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: 0 0 17px 0 #e4e4e4;
+    background: #fff;
 }
 
 .site__product>.site__product-image>a>img {
     width: 100%;
-    border-radius: 25px;
+    border-radius: 20px;
     padding: 10px;
 }
 
@@ -189,7 +191,7 @@
 
 .site__product-body>a {
     color: #4b4b4b;
-    font-weight: 600;
+    font-weight: 500;
     text-decoration: none;
 }
 
@@ -199,13 +201,48 @@
     margin-bottom: 20px;
 }
 
-.site__product-price>span {
-    background-color: #e9ecff;
-    color: #203efa;
-    padding: 7px 15px;
-    font-weight: 600;
-    font-size: 13px !important;
+.site__product-price>span.price {
+    /* background-color: #e9ecff; */
+    /* color: #203efa; */
+    /* padding: 7px 15px; */
+    font-size: 18px !important;
     border-radius: 100px;
+}
+
+.site__product-price.discount>span.price {
+    text-decoration: line-through;
+    color: #4b4b4b;
+    font-weight: 400;
+}
+
+.site__product-price.discount>span.price::before {
+    width: 100%;
+    height: 2px;
+    background-color: #203efa;
+    content: ' ';
+    top: 0;
+    left: 0;
+}
+
+.site__product-price > span {
+    padding: 7px 10px;
+    color: #203efa;
+    font-weight: 500;
+}
+
+.site__product-discount {
+    text-align: center;
+}
+
+.site__product-detail > a {
+    display: block;
+    border: solid 1px #ccc;
+    color: #4b4b4b;
+    text-decoration: none;
+    padding: 7px 0;
+    margin: 10px;
+    border-radius: 100px;
+    text-align: center;
 }
 
 .splide__slide {
@@ -265,18 +302,19 @@
 
 .site__search-box>.searchbox {
     width: 100%;
-    height: 50px;
+    height: 45px;
     background-color: #eee;
     border: 0;
-    border-radius: 10px;
+    border-radius: 100px;
     padding-left: 20px;
+    font-size: 15px;
 }
 
 .site__search-box>.searchbox-submit {
     width: 40px !important;
     height: 40px !important;
-    background-color: #4962ff;
-    color: #fff;
+    /* background-color: #4962ff; */
+    color: #4b4b4b;
     border: 0;
     border-radius: 10px;
     position: absolute;
@@ -331,7 +369,7 @@
 .mobile-menu>li>a {
     color: #4b4b4b;
     text-decoration: none !important;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 15px !important;
 }
 
@@ -387,6 +425,11 @@
     display: none;
 }
 
+.site__message-holder {
+    background-color: #efefef;
+    padding: 50px 0;
+}
+
 .category-menu {
     box-shadow: 0 0 10px #ebf0f5;
     -moz-box-shadow: 0 0 10px #ebf0f5;
@@ -407,7 +450,7 @@
     color: #4b4b4b;
     text-decoration: none;
     margin-right: 40px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .category-list>ul>li {
@@ -452,7 +495,7 @@
     color: #4b4b4b;
     line-height: 30px;
     transition: all .1s;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .category-list>ul>li>ul>li>a:hover {
@@ -469,7 +512,7 @@
 }
 
 .landing-content>h3 {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .Ctable>table {
@@ -529,7 +572,7 @@
 .checkout-header {
     margin-bottom: 20px;
     font-size: 22px !important;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .full-width {
@@ -547,7 +590,7 @@
 
 .dfpanel>.heading {
     font-size: 22px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .profileMenu>img {
@@ -647,7 +690,7 @@
 .checkout-header {
     margin-bottom: 20px;
     font-size: 22px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .checkout-discount, .checkout-subtotal, .checkout-price {
@@ -680,7 +723,7 @@
 
 .sidebar-profile-detail>span.SP_username {
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 500;
     color: #3f55e1;
 }
 
@@ -704,7 +747,7 @@
 
 .sidebar-list>li.active>a {
     color: #3f55e1;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .sidebar-list>li>a {
@@ -731,7 +774,7 @@
 .widget-data > .widget-value {
     display: block;
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 18px;
     margin-top: 10px;
 }
@@ -749,7 +792,7 @@
 
 .info-data > p > .user-info-title {
     color: #888;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .info-data > p > .user-info-title > i {
@@ -760,5 +803,5 @@
 
 .info-data > p > .user-info-value {
     color: #000;
-    font-weight: 600;
+    font-weight: 500;
 }

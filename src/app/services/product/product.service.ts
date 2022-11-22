@@ -16,4 +16,8 @@ export class ProductService {
   getPopularProducts(): Observable<any> {
     return this.http.get('product/get-popular-products');
   }
+
+  filterProducts(title: string): Observable<any> {
+    return this.http.get('product/filter-products?title='+title+'');
+  }
 }

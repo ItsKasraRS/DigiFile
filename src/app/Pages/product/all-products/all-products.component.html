@@ -4,10 +4,12 @@
             <div class="CPanel">
                 <div class="row justify-content-between">
                     <div class="col-12 col-md-5">
-                        <div class="search-box">
-                            <input type="text" class="search-input" placeholder="Search product ...">
-                            <button><i class="far fa-search"></i></button>
-                        </div>
+                        <form method="get" (ngSubmit)="searchByTitle()">
+                            <div class="search-box">
+                                <input type="text" class="search-input" placeholder="Search product ..." [(ngModel)]="title" name="title">
+                                <button type="submit"><i class="far fa-search"></i></button>
+                            </div>
+                        </form>
                     </div>
                     <div class="col-12 col-md-3">
                         <select class="form-select" aria-label="Sort by">
@@ -38,30 +40,13 @@
                 <div class="CP_body">
                     <div class="container-fluid my-3">
                         <ul class="categories-filter">
-                            <li>
-                                <mat-checkbox color="primary">Something</mat-checkbox>
-                                <ul>
-                                    <li>
-                                        <mat-checkbox color="primary">Something</mat-checkbox>
-                                    </li>
-                                    <li>
-                                        <mat-checkbox color="primary">Something</mat-checkbox>
+                            <li *ngFor="let item of categories | categoriesFilter: null">
+                                <mat-checkbox color="primary" style="font-weight: 500;">{{item.title}}</mat-checkbox>
+                                <ul *ngIf="(categories | categoriesFilter: null).length > 0">
+                                    <li *ngFor="let sub of categories | categoriesFilter: item.categoryId">
+                                        <mat-checkbox color="primary" style="font-weight: 500;">{{sub.title}}</mat-checkbox>
                                     </li>
                                 </ul>
-                            </li>
-                            <li>
-                                <mat-checkbox color="primary">Something</mat-checkbox>
-                                <ul>
-                                    <li>
-                                        <mat-checkbox color="primary">Something</mat-checkbox>
-                                    </li>
-                                    <li>
-                                        <mat-checkbox color="primary">Something</mat-checkbox>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <mat-checkbox color="primary">Something</mat-checkbox>
                             </li>
                         </ul>
                     </div>
@@ -70,8 +55,11 @@
         </div>
         <div class="col-12 col-md-8 col-lg-9">
             <div class="row">
-                <div class="col-12 col-sm-6 col-lg-4">
-                    
+                <div class="mt-5 mb-5 d-block" *ngIf="!loaded">
+                    <mat-spinner [diameter]="50"style="margin: auto"></mat-spinner>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4" *ngFor="let product of products">
+                    <app-single-product [product]="product"></app-single-product>
                 </div>
             </div>
         </div>

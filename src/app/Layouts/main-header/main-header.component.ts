@@ -1,11 +1,12 @@
 import { LoginComponent } from './../../Pages/login/login.component';
-import { ChangeDetectorRef, Component, OnInit, AfterViewInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { AccountService } from 'src/app/services/account/account.service';
 import { BehaviorSubject } from 'rxjs';
 import { CategoryService } from 'src/app/services/category/category.service';
 import { SimpleDomainName } from 'src/app/Utilities/ApiPath';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { Router } from '@angular/router';
 
 const helper = new JwtHelperService();
 
@@ -20,7 +21,8 @@ export class MainHeaderComponent implements OnInit {
   userInfo: any;
   userImage = SimpleDomainName + 'user/';
   token = localStorage.getItem('token');
-  constructor(private dialog: MatDialog, private api: AccountService, private cdr: ChangeDetectorRef, private categoryService: CategoryService) 
+  searchTitle = '';
+  constructor(private dialog: MatDialog, private api: AccountService, private cdr: ChangeDetectorRef, private categoryService: CategoryService, private router: Router) 
   { 
   }
 
@@ -56,5 +58,12 @@ export class MainHeaderComponent implements OnInit {
     this.dialog.open(LoginComponent, {
       width: '400px'
     });
+  }
+
+  searchProduct() {
+    this.router.navigateByUrl('/register', {skipLocationChange: true }).then(() => {
+      this.router.navigate(['/products'], {queryParams: { q: this.searchTitle ? this.searchTitle : ''}})
+    }); 
+    // this.router.navigate(['/products'], {queryParams: { q: this.searchTitle}})
   }
 }

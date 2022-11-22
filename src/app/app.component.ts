@@ -9,6 +9,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 })
 export class AppComponent implements AfterViewInit {
   loading: boolean = true;
+  title;
   constructor(private router: Router, private activatedRoute:    ActivatedRoute, private titleService: Title,private cdr: ChangeDetectorRef) {
     router.events.subscribe(event => {
       if(event instanceof NavigationEnd) {
@@ -20,6 +21,9 @@ export class AppComponent implements AfterViewInit {
   ngAfterViewInit(): void {
       this.cdr.detectChanges();
   }
+
+
+  
   getTitle(state, parent) {
     var data = [];
     if(parent && parent.snapshot.data && parent.snapshot.data.title) {
