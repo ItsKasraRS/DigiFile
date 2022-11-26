@@ -34,6 +34,7 @@ import { UserSidebarComponent } from './Pages/user/user-sidebar/user-sidebar.com
 import { CategoriesFilter } from './Utilities/AppFilters';
 import { SingleProductComponent } from './Pages/product/single-product/single-product.component';
 import { AllProductsComponent } from './Pages/product/all-products/all-products.component';
+import { RedirectComponent } from './Layouts/redirect/redirect.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { AllProductsComponent } from './Pages/product/all-products/all-products.
     CategoriesFilter,
          SingleProductComponent,
          AllProductsComponent,
+         RedirectComponent,
   ],
   imports: [
     HttpClientModule,

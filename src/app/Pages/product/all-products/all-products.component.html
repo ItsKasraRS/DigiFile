@@ -6,23 +6,23 @@
                     <div class="col-12 col-md-5">
                         <form method="get" (ngSubmit)="searchByTitle()">
                             <div class="search-box">
-                                <input type="text" class="search-input" placeholder="Search product ..." [(ngModel)]="title" name="title">
+                                <input type="text" class="search-input" placeholder="Search product ..." [(ngModel)]="filterProducts.title" name="filterProducts.title">
                                 <button type="submit"><i class="far fa-search"></i></button>
                             </div>
                         </form>
                     </div>
                     <div class="col-12 col-md-3">
-                        <select class="form-select" aria-label="Sort by">
-                            <option selected disabled>Sort by</option>
-                            <option value="1">Latest products</option>
-                            <option value="2">Popular products</option>
+                        <select class="form-select" aria-label="Sort by" (change)="productSortBy()" [(ngModel)]="sortBy" name="sortBy">
+                            <option selected disabled value="sortBy">Sort by</option>
+                            <option value="Latest">Latest products</option>
+                            <option value="Popular">Popular products</option>
                           </select>
                     </div>
                     <div class="col-12 col-md-3">
-                        <select class="form-select" aria-label="Price">
-                            <option selected disabled>Price</option>
-                            <option value="1">High to low</option>
-                            <option value="2">Low to high</option>
+                        <select class="form-select" aria-label="Price" (change)="productSortBy()" [(ngModel)]="sortBy" name="sortBy">
+                            <option selected disabled value="sortBy">Price</option>
+                            <option value="PriceDesc">High to low</option>
+                            <option value="PriceAsc">Low to high</option>
                           </select>
                     </div>
                 </div>
@@ -41,10 +41,12 @@
                     <div class="container-fluid my-3">
                         <ul class="categories-filter">
                             <li *ngFor="let item of categories | categoriesFilter: null">
-                                <mat-checkbox color="primary" style="font-weight: 500;">{{item.title}}</mat-checkbox>
+                                <!-- <mat-checkbox color="primary" style="font-weight: 500;">{{item.title}}</mat-checkbox> -->
+                                <a (click)="findByCategory(item.categoryId)" class="clickable"><i class="far fa-chevron-right"></i> {{item.title}}</a>
                                 <ul *ngIf="(categories | categoriesFilter: null).length > 0">
                                     <li *ngFor="let sub of categories | categoriesFilter: item.categoryId">
-                                        <mat-checkbox color="primary" style="font-weight: 500;">{{sub.title}}</mat-checkbox>
+                                        <!-- <mat-checkbox color="primary" style="font-weight: 500;">{{sub.title}}</mat-checkbox> -->
+                                        <a (click)="findByCategory(sub.categoryId)" class="clickable">{{sub.title}}</a>
                                     </li>
                                 </ul>
                             </li>
@@ -60,6 +62,19 @@
                 </div>
                 <div class="col-12 col-sm-6 col-lg-4" *ngFor="let product of products">
                     <app-single-product [product]="product"></app-single-product>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="paging">
+                        <ul>
+                            <li><a href="#"><i class="far fa-chevron-left"></i></a></li>
+                            <li *ngFor="let i of pages" [ngClass]="{'active': filterProducts.pageId == i}"><a class="clickable" (click)="setPage(i)">{{i}}</a></li>
+                            <!-- <li><a href="#">2</a></li>
+                            <li class="active"><a href="#">3</a></li> -->
+                            <li *ngIf="filterProducts.pageId < filterProducts.pageCount"><a class="clickable" (click)="setPage(filterProducts.pageId + 1)"><i class="far fa-chevron-right"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

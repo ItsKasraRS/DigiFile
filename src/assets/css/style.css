@@ -313,7 +313,7 @@
 .site__search-box>.searchbox-submit {
     width: 40px !important;
     height: 40px !important;
-    /* background-color: #4962ff; */
+    background-color: transparent;
     color: #4b4b4b;
     border: 0;
     border-radius: 10px;
@@ -323,10 +323,10 @@
     transition: all .3s;
 }
 
-.site__search-box>.searchbox-submit:hover {
+/* .site__search-box>.searchbox-submit:hover {
     background-color: #3f55e1;
 
-}
+} */
 
 .mobile__menu {
     position: fixed;
@@ -407,17 +407,17 @@
 }
 
 .registerBtn {
-    border: solid 2px #4962ff;
-    color: #4962ff !important;
+    background-color: #efefef;
+    color: #000000 !important;
     padding: 10px 20px;
     border-radius: 100px;
     margin: 0 !important;
 }
 
 .loginBtn {
-    background: #4962ff;
+    background: #fccd04;
     padding: 10px 20px;
-    color: #fff !important;
+    color: #000 !important;
     border-radius: 100px;
 }
 

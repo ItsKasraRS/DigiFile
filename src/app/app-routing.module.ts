@@ -10,6 +10,7 @@ import { ActivateAccountComponent } from './Pages/activate-account/activate-acco
 import { AppGuard } from './guards/app.guard';
 import { DashboardComponent } from './Pages/user/dashboard/dashboard.component';
 import { AllProductsComponent } from './Pages/product/all-products/all-products.component';
+import { RedirectComponent } from './Layouts/redirect/redirect.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,8 @@ const routes: Routes = [
       { path: '', component: HomeComponent, data: { title: 'Home' } },
       { path: 'register', component: RegisterComponent, data: { title: 'Register' }  },
       { path: 'user/dashboard', component: DashboardComponent, canActivate: [AppGuard], data: { title: 'Dashboard' } },
-      { path: 'products', component: AllProductsComponent, data: { title: 'Products' }, runGuardsAndResolvers: 'always', }
+      { path: 'products', component: AllProductsComponent, data: { title: 'Products' }, runGuardsAndResolvers: 'always' },
+      { path: 'redirect', component: RedirectComponent, data: { title: 'Redirecting' } }
     ]
   },
   {

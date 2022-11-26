@@ -1,5 +1,6 @@
 .search-box {
     display: flex;
+    position: relative;
 }
 
 .search-input {
@@ -13,12 +14,14 @@
 }
 
 .search-box > button {
-    padding: 0 20px;
     border: 0;
-    margin-left: 5px;
     border-radius: 5px;
-    background-color: #4962ff;
-    color: #fff;
+    background-color: transparent;
+    color: #000;
+    position: absolute;
+    top: 0;
+    right: 15px;
+    height: 40px;
 }
 
 .categories-filter {
@@ -36,4 +39,59 @@
 
 .categories-filter > li {
     line-height: 40px;
+}
+
+.categories-filter > li > a {
+    color: #4b4b4b;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.categories-filter > li > a > i {
+    font-size: 13px;
+    vertical-align: 1px;
+    color: #4962ff;
+    margin-right: 5px
+}
+
+.categories-filter > li > ul > li > a {
+    color: #4b4b4b;
+    text-decoration: none;
+}
+
+.paging {
+    float: right;
+}
+
+.paging > ul {
+    display: flex;
+    list-style: none;
+}
+
+.paging > ul > li {
+    width: 35px;
+    height: 35px;
+}
+
+.paging > ul > li > a {
+    text-decoration: none;
+    color: #4b4b4b;
+    display: block;
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+    transition: all .1s;
+}
+
+.paging > ul > li > a:hover {
+    background: #fff;
+    box-shadow: 0 2px 4px 0 #ccc;
+    border-radius: 3px;
+}
+
+.paging > ul > li.active > a {
+    background: #4962ff;
+    color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 0 #ccc;
 }

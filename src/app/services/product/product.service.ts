@@ -17,7 +17,7 @@ export class ProductService {
     return this.http.get('product/get-popular-products');
   }
 
-  filterProducts(title: string): Observable<any> {
-    return this.http.get('product/filter-products?title='+title+'');
+  filterProducts(title: string, sortBy: string, categoryId: number, pageId: number): Observable<any> {
+    return this.http.get('product/filter-products?title='+title+'&sortBy='+(sortBy && sortBy !== 'sortBy' ? sortBy : '')+'&categories='+categoryId+'&pageId='+pageId);
   }
 }
