@@ -11,6 +11,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatTabsModule} from '@angular/material/tabs';
+
 import {ObserversModule} from '@angular/cdk/observers';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -35,6 +37,11 @@ import { CategoriesFilter } from './Utilities/AppFilters';
 import { SingleProductComponent } from './Pages/product/single-product/single-product.component';
 import { AllProductsComponent } from './Pages/product/all-products/all-products.component';
 import { RedirectComponent } from './Layouts/redirect/redirect.component';
+import { ProductDetailsComponent } from './Pages/product/product-details/product-details.component';
+import { CartComponent } from './Pages/cart/cart.component';
+import { ProductService } from './services/product/product.service';
+import { CategoryService } from './services/category/category.service';
+import { OrderService } from './services/order/order.service';
 
 @NgModule({
   declarations: [
@@ -50,7 +57,8 @@ import { RedirectComponent } from './Layouts/redirect/redirect.component';
     ActivateAccountComponent,
     DashboardComponent,
     UserSidebarComponent,
-    
+    ProductDetailsComponent,
+    CartComponent,
     //Pipes
     CategoriesFilter,
          SingleProductComponent,
@@ -65,6 +73,7 @@ import { RedirectComponent } from './Layouts/redirect/redirect.component';
    ObserversModule,
    MatProgressSpinnerModule,
    MatCheckboxModule,
+   MatTabsModule,
    BrowserModule,
    AppRoutingModule,
    BrowserAnimationsModule,
@@ -83,6 +92,9 @@ import { RedirectComponent } from './Layouts/redirect/redirect.component';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: FileShopInterceptor, multi: true },
     AccountService,
+    ProductService,
+    CategoryService,
+    OrderService,
     AppGuard
   ],
   bootstrap: [AppComponent]

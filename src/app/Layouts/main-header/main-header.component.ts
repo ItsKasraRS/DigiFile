@@ -7,6 +7,7 @@ import { CategoryService } from 'src/app/services/category/category.service';
 import { SimpleDomainName } from 'src/app/Utilities/ApiPath';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
+import { OrderService } from 'src/app/services/order/order.service';
 
 const helper = new JwtHelperService();
 
@@ -22,7 +23,8 @@ export class MainHeaderComponent implements OnInit {
   userImage = SimpleDomainName + 'user/';
   token = localStorage.getItem('token');
   searchTitle = '';
-  constructor(private dialog: MatDialog, private api: AccountService, private cdr: ChangeDetectorRef, private categoryService: CategoryService, private router: Router) 
+  totalItem;
+  constructor(private dialog: MatDialog, private api: AccountService, private cdr: ChangeDetectorRef, private categoryService: CategoryService, private router: Router, private orderService: OrderService) 
   { 
   }
 
@@ -38,6 +40,14 @@ export class MainHeaderComponent implements OnInit {
       if(res.status === 'Success') {
         this.userInfo = res.data;
       }
+    });
+
+    this.orderService.getCount().subscribe(res => {
+      this.orderService.setCount(res['data']);
+      this.orderService.getObservableCount().subscribe(count => {
+        this.totalItem = count;
+      }
+      );
     });
   }
   isLoggedIn() {

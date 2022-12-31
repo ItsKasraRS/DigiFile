@@ -52,7 +52,7 @@
                                 </a>
                             </li>
                             <li *ngIf="isAuthenticated">
-                                <a id="CartBtn" class="clickable CBtn CBtn-light CBtn-warning home-cart-btn" style="padding: 5px 20px;border-radius: 4px;"><i class="far fa-shopping-cart"></i><span class="cart-count">1</span></a>
+                                <a routerLink="/cart/" id="CartBtn" class="clickable CBtn CBtn-light CBtn-warning home-cart-btn" style="padding: 5px 20px;border-radius: 4px;"><i class="far fa-shopping-cart"></i><span class="cart-count">{{totalItem}}</span></a>
                             </li>
                         </ul>
                     </div>

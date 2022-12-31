@@ -1,0 +1,98 @@
+.product-image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product-price {
+    color: #203EFA;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.product-info {
+    display: flex;
+}
+
+.product-info > ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.product-info > ul > li {
+    line-height: 30px;
+}
+
+.info-title > li {
+    font-weight: 500;
+    color: #203EFA;
+}
+
+.like-button {
+    color: red;
+    background-color: transparent;
+    border: 0;
+    font-size: 25px;
+    vertical-align: -4px;
+    margin-left: 10px;
+}
+
+.splide__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .splide__slide {
+    opacity: 0.6;
+    margin-left: 0;
+  }
+  
+  .splide__slide.is-active {
+    opacity: 1;
+  }
+
+  .thumbnails {
+    display: flex;
+    margin: 1rem auto 0;
+    padding: 0;
+    justify-content: center;
+  }
+  
+  .thumbnail {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    list-style: none;
+    margin: 0 0.2rem;
+    cursor: pointer;
+  }
+  
+  .thumbnail img {
+    width: 100%;
+    height: auto;
+  }
+
+
+.comment-item {
+  background-color: #efefef;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 30px
+}
+
+.comment-section > ul {
+  list-style: none;
+}
+
+.comment-profile > img {
+  width: 50px;
+  height: 50px;
+  border: solid 2px #203EFA;
+  border-radius: 100%;
+  padding: 2px;
+}
+
+.comment-profile > span {
+  margin-left: 15px;
+  font-weight: 600;
+}

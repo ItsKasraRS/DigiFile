@@ -38,6 +38,10 @@
     background: #ebc107;
 }
 
+.CBtn-warning-disabled {
+    background-color: #ffe885 !important;
+}
+
 .CPanel {
     background: #fff;
     padding: 10px 20px;

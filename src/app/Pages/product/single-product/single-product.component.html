@@ -5,7 +5,7 @@
         </a>
     </div>
     <div class="site__product-body" style="height: 120px;">
-        <a href="#">
+        <a [routerLink]="['/product/'+product.id]">
             {{product.title}}
         </a>
         <div class="site__product-price discount">

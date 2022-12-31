@@ -11,6 +11,8 @@ import { AppGuard } from './guards/app.guard';
 import { DashboardComponent } from './Pages/user/dashboard/dashboard.component';
 import { AllProductsComponent } from './Pages/product/all-products/all-products.component';
 import { RedirectComponent } from './Layouts/redirect/redirect.component';
+import { ProductDetailsComponent } from './Pages/product/product-details/product-details.component';
+import { CartComponent } from './Pages/cart/cart.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,8 @@ const routes: Routes = [
       { path: 'register', component: RegisterComponent, data: { title: 'Register' }  },
       { path: 'user/dashboard', component: DashboardComponent, canActivate: [AppGuard], data: { title: 'Dashboard' } },
       { path: 'products', component: AllProductsComponent, data: { title: 'Products' }, runGuardsAndResolvers: 'always' },
+      { path: 'product/:id', component: ProductDetailsComponent, data: { title: 'Product' } },
+      { path: 'cart', component: CartComponent, canActivate: [AppGuard], data: { title: 'Your cart' } },
       { path: 'redirect', component: RedirectComponent, data: { title: 'Redirecting' } }
     ]
   },

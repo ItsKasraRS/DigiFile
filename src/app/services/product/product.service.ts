@@ -20,4 +20,8 @@ export class ProductService {
   filterProducts(title: string, sortBy: string, categoryId: number, pageId: number): Observable<any> {
     return this.http.get('product/filter-products?title='+title+'&sortBy='+(sortBy && sortBy !== 'sortBy' ? sortBy : '')+'&categories='+categoryId+'&pageId='+pageId);
   }
+
+  getProductDetails(id: number): Observable<any> {
+    return this.http.get('product/details/'+id);
+  }
 }
