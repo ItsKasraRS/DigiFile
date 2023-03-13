@@ -12,3 +12,12 @@ export class UserData {
         public email: string
     ) {}
 }
+
+export class EditProfileDTO {
+    constructor(
+        public userName: string,
+        public mobile: string,
+        public imageAvatar: string,
+        public selectedImage: File
+    ){}
+}

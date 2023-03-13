@@ -1,0 +1,21 @@
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-12 col-md-3"></div>
+    <div class="col-12 col-md-6">
+      <div class="CPanel">
+        <div class="CP_header">
+          <header>Your Payment Result</header>
+        </div>
+        <div class="">
+          <div class="CAlert CAlert-success mt-3" *ngIf="paymentStatus != null && paymentStatus">
+            Your payment has been successfully completed. Order code: #324
+          </div>
+          <div class="CAlert CAlert-error mt-3" *ngIf="paymentStatus != null && !paymentStatus">
+            The payment encountered an error.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-3"></div>
+  </div>
+</div>

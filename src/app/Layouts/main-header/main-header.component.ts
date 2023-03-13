@@ -76,4 +76,10 @@ export class MainHeaderComponent implements OnInit {
     }); 
     // this.router.navigate(['/products'], {queryParams: { q: this.searchTitle}})
   }
+
+  navigateCategory(id: number) {
+    this.router.navigateByUrl('/redirect', {skipLocationChange: true }).then(() => {
+      this.router.navigate(['/products'], {queryParams: { categories: id != null || undefined ? id : null}})
+    });
+  }
 }

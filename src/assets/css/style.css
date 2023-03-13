@@ -16,6 +16,13 @@
     border: 0;
 }
 
+.CBtn-md {
+    padding: 9px 14px;
+    border-radius: 5px;
+    font-size: 15px;
+    /* font-weight: 400; */
+}
+
 .CBtn-light {
     color: #000 !important;
 }
@@ -32,6 +39,20 @@
 
 .CBtn-warning {
     background: #fccd04;
+}
+
+.CBtn-primary {
+    background: #3f55e1;
+    color: #fff;
+}
+
+.CBtn-primary:hover {
+    background: #3346bd;
+}
+
+.CBtn-primary:disabled {
+    background: #6176ff;
+    cursor: not-allowed;
 }
 
 .CBtn-warning:hover {
@@ -60,6 +81,21 @@
     padding: 0 10px;
     padding-left: 0;
     padding-bottom: 12px;
+}
+
+.CAlert {
+    background: #e2e2e2;
+    padding: 12px 22px;
+}
+
+.CAlert-success {
+    background-color: #a6e0a1;
+    color: #005013;
+}
+
+.CAlert-error {
+    background-color: #e0a1a1;
+    color: #500000;
 }
 
 /* Content Styles */
@@ -808,4 +844,52 @@
 .info-data > p > .user-info-value {
     color: #000;
     font-weight: 500;
+}
+
+.CForm > input {
+    width: 100%;
+    height: 40px;
+    border: 0.0625rem solid #8C9196;
+    padding: 0 10px;
+    border-radius: 5px;
+    transition: all .2s;
+}
+
+.CForm > input:focus {
+    -webkit-box-shadow: 0 0 0 0.0625rem #3f55e1;
+    box-shadow: 0 0 0 0.0625rem #3f55e1;
+    border-color: #3f55e1;
+    transition: all .2s;
+}
+
+.CForm > input:disabled {
+    cursor: not-allowed;
+}
+
+.CForm > label {
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+}
+
+.custom-table {
+    width: 100%;
+    margin-top: 25px;
+}
+
+.custom-table > thead > tr {
+    border-bottom: solid 1px #4b4b4b;
+}
+
+.custom-table > thead > tr > th {
+    padding: 10px;
+    background: #f8f8f8;
+}
+
+.custom-table > tbody > tr {
+    border-bottom: solid 1px #ccc;
+}
+
+.custom-table > tbody > tr > td {
+    
+    padding: 10px;
 }

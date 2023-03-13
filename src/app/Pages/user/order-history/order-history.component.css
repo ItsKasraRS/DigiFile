@@ -1,0 +1,31 @@
+.order-id {
+    border-bottom: solid 2px #3f55e1;
+    padding: 2px 5px;
+}
+
+.order-products {
+    list-style: none;
+}
+
+.order-products > li > a {
+    text-decoration: none;
+    line-height: 30px;
+}
+
+.status-success {
+    color: #1ebb60;
+    border-bottom: solid 2px #1ebb60;
+    padding: 2px 5px;
+}
+
+.status-warning {
+    color: #d49400;
+    border-bottom: solid 2px #d49400;
+    padding: 2px 5px;
+}
+
+.status-failed {
+    color: #bb1e1e;
+    border-bottom: solid 2px #bb1e1e;
+    padding: 2px 5px;
+}

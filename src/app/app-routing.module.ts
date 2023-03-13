@@ -13,6 +13,10 @@ import { AllProductsComponent } from './Pages/product/all-products/all-products.
 import { RedirectComponent } from './Layouts/redirect/redirect.component';
 import { ProductDetailsComponent } from './Pages/product/product-details/product-details.component';
 import { CartComponent } from './Pages/cart/cart.component';
+import { EditProfileComponent } from './Pages/user/edit-profile/edit-profile.component';
+import { ChangePasswordComponent } from './Pages/user/change-password/change-password.component';
+import { OrderHistoryComponent } from './Pages/user/order-history/order-history.component';
+import { PaymentResultComponent } from './Pages/cart/payment-result/payment-result.component';
 
 const routes: Routes = [
   {
@@ -21,11 +25,17 @@ const routes: Routes = [
     children: [
       { path: '', component: HomeComponent, data: { title: 'Home' } },
       { path: 'register', component: RegisterComponent, data: { title: 'Register' }  },
-      { path: 'user/dashboard', component: DashboardComponent, canActivate: [AppGuard], data: { title: 'Dashboard' } },
       { path: 'products', component: AllProductsComponent, data: { title: 'Products' }, runGuardsAndResolvers: 'always' },
       { path: 'product/:id', component: ProductDetailsComponent, data: { title: 'Product' } },
       { path: 'cart', component: CartComponent, canActivate: [AppGuard], data: { title: 'Your cart' } },
-      { path: 'redirect', component: RedirectComponent, data: { title: 'Redirecting' } }
+      { path: 'payment-result', component: PaymentResultComponent, canActivate: [AppGuard], data: { title: 'Payment Result' } },
+      { path: 'redirect', component: RedirectComponent, data: { title: 'Redirecting' } },
+
+      // User Panel
+      { path: 'user/dashboard', component: DashboardComponent, canActivate: [AppGuard], data: { title: 'Dashboard' } },
+      { path: 'user/edit-profile', component: EditProfileComponent, canActivate: [AppGuard], data: { title: 'Edit profile' } },
+      { path: 'user/change-password', component: ChangePasswordComponent, canActivate: [AppGuard], data: { title: 'Change password' } },
+      { path: 'user/order-history', component: OrderHistoryComponent, canActivate: [AppGuard], data: { title: 'Order history' } }
     ]
   },
   {

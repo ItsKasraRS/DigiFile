@@ -25,8 +25,6 @@ export class RegisterComponent implements OnInit {
       rePassword: new FormControl(null, [Validators.required, Validators.maxLength(200), Validators.minLength(8)])
     })
     this.user.setValidators(this.comparisonValidator());
-    console.log(this.user.controls.rePassword.errors);
-
   }
 
   comparisonValidator(): ValidatorFn {

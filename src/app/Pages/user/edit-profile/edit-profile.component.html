@@ -1,0 +1,53 @@
+<div class="container" style="margin-top: 75px;">
+  <div class="row justify-content-md-center justify-content-lg-between">
+      <div class="col-12 col-md-8 col-lg-3">
+          <app-user-sidebar></app-user-sidebar>
+      </div>
+      <div class="col-12 col-md-12 col-lg-8">
+          <div class="CPanel">
+              <div class="CP_header">
+                  <header>
+                      <span>Edit profile</span>
+                  </header>
+              </div>
+              <div class="CP_body">
+                  <form [formGroup]="userData" (ngSubmit)="editProfile()">
+                    <div class="row my-5">
+                      <div class="col-12 col-md-6">
+                        <div class="CForm mb-4">
+                          <label for="userName">Username</label>
+                          <input id="userName" type="text" formControlName="userName">
+                          <span class="text-danger form-val" *ngIf="userData.controls.userName.errors?.required && userData.controls.userName.touched">Username is required</span>                                                    
+                          <span class="text-danger form-val" *ngIf="userData.controls.userName.errors?.maxlength && userData.controls.userName.touched">Username cannot be more than 200 character</span>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div class="CForm mb-4">
+                          <label>Email</label>
+                          <input disabled="disabled" type="email" [value]="email">
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div class="CForm mb-4">
+                          <label for="phoneNumber">Phone number</label>
+                          <input id="phoneNumber" type="text" formControlName="phoneNumber">
+                          <span class="text-danger form-val" *ngIf="userData.controls.phoneNumber.errors?.required && userData.controls.phoneNumber.touched">Phone number is required</span>                                                    
+                          <span class="text-danger form-val" *ngIf="userData.controls.phoneNumber.errors?.maxlength && userData.controls.phoneNumber.touched">Phone number cannot be more than 11 character</span>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div class="CForm mb-4">
+                          <label for="avatar">Profile avatar</label>
+                          <input id="avatar" type="file" style="padding: 5px 10px" (change)="onFileChange($event)">
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <button type="submit" class="CBtn CBtn-primary CBtn-md">Save changes</button>
+                      </div>
+                    </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

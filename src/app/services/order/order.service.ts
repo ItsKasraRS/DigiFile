@@ -31,4 +31,16 @@ constructor(private http: HttpClient) { }
   getObservableCount(): Observable<any> {
     return this.cartCount$;
   }
+
+  //checkout
+  checkoutRequest(model: any): Observable<any> {
+    return this.http.post('order/checkout-payment', model);
+  }
+  checkoutResponse(accessCode: string): Observable<any> {
+    return this.http.get('order/payment-result', {
+      params: {
+        AccessCode: accessCode
+      }
+    })
+  }
 }

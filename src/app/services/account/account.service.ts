@@ -39,4 +39,13 @@ export class AccountService {
   getDashboardInfo(userId: number): Observable<any> {
     return this.http.get('account/get-dashboard-info/'+userId);
   }
+  editProfile(model): Observable<any> {
+    return this.http.put('account/edit-profile', model);
+  }
+  changePassword(model): Observable<any> {
+    return this.http.post('account/change-password', model);
+  }
+  getOrders(): Observable<any> {
+    return this.http.get('account/user-orders');
+  }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject } from 'rxjs';
+import { PaymentDTO } from 'src/app/DTOs/Order/orderDTO';
 import { OrderService } from 'src/app/services/order/order.service';
 import { ProductImages } from 'src/app/Utilities/ApiPath';
 
@@ -51,5 +52,13 @@ export class CartComponent implements OnInit {
         this.toast.warning('Product successfully removed!');
       }
     });
+  }
+
+  checkoutRequest() {
+    const model = new PaymentDTO(this.totalPrice);
+
+    this.orderService.checkoutRequest(model).subscribe(res=> {
+      window.location.href = res.result['sharedPaymentUrl'];
+    })
   }
 }

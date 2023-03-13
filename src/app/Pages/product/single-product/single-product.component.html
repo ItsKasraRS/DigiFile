@@ -1,6 +1,6 @@
 <div class="site__product mb-3">
     <div class="site__product-image">
-        <a href="#">
+        <a class="clickable"  [routerLink]="['/product/'+product.id]">
             <img [src]="productImage + product.image" style="width: 100%;height: 227px;"> <!-- style="width: 320px;height: 227px;" -->
         </a>
     </div>
@@ -14,7 +14,7 @@
 
     </div>
     <div class="site__product-detail">
-        <a href="#">
+        <a class="clickable" [routerLink]="['/product/'+product.id]">
             See Details
         </a>
     </div>

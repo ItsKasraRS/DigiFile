@@ -24,4 +24,8 @@ export class ProductService {
   getProductDetails(id: number): Observable<any> {
     return this.http.get('product/details/'+id);
   }
+
+  getProductGallery(id: number): Observable<any> {
+    return this.http.get('product/get-gallery/'+id);
+  }
 }

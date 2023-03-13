@@ -7,8 +7,8 @@
             <li class="splide__slide">
               <img [src]="imagePath + product['image']" alt="product picture">
             </li>
-            <li class="splide__slide">
-              <img src="/assets/images/Product-1.jpg" alt="">
+            <li class="splide__slide" *ngFor="let item of gallery">
+              <img [src]="galleryPath + item['galleryImage']" [alt]="product['title']">
             </li>
           </ul>
         </div>
@@ -18,8 +18,8 @@
         <li class="thumbnail">
           <img [src]="imagePath + product['image']" alt="product picture">
         </li>
-        <li class="thumbnail">
-          <img src="/assets/images/Product-1.jpg" alt="">
+        <li class="thumbnail" *ngFor="let item of gallery">
+          <img [src]="galleryPath + item['galleryImage']" [alt]="product['title']">
         </li>
       </ul>
     </div>

@@ -19,6 +19,7 @@ export class ProductDetailsComponent implements OnInit {
   galleryPath = ProductGallery;
   productStatus;
   isProductInCart = false;
+  gallery = [];
   constructor(private activatedRoute: ActivatedRoute, private api: ProductService, private orderApi: OrderService, private toast: ToastrService, @Inject(DOCUMENT) document: Document) { 
     ScriptLoader.prototype.loadScript('/assets/js/gallerySlider.js');
   }
@@ -28,6 +29,10 @@ export class ProductDetailsComponent implements OnInit {
       this.api.getProductDetails(res['id']).subscribe(res=> {
         if(res.status === "Success") {
           this.product = res.data;
+          this.api.getProductGallery(this.product['id']).subscribe(res=> {
+            this.gallery = res.data;
+            console.log(this.gallery);
+          })
           this.orderApi.isExistProductInOrder(this.product['id']).subscribe(res=> {
             this.productStatus = res.status;
             if(res.status === 'IsExist') {
