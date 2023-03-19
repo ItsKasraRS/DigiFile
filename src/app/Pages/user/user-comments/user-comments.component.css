@@ -1,0 +1,25 @@
+.comment-product {
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.comment-waiting {
+    color: #a74b00;
+    border-bottom: solid 3px #a74b00;
+    padding-bottom: 3px;
+    font-weight: 600;
+}
+
+.comment-approved {
+    color: #00a732;
+    border-bottom: solid 3px #00a732;
+    padding-bottom: 3px;
+    font-weight: 600;
+}
+
+.comment-denied {
+    color: #a70000;
+    border-bottom: solid 3px #a70000;
+    padding-bottom: 3px;
+    font-weight: 600;
+}

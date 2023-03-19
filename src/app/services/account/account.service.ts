@@ -48,4 +48,7 @@ export class AccountService {
   getOrders(): Observable<any> {
     return this.http.get('account/user-orders');
   }
+  getComments(): Observable<any> {
+    return this.http.get('account/user-comments');
+  }
 }

@@ -35,20 +35,24 @@ export class MainHeaderComponent implements OnInit {
     })
 
     const decodedToken = helper.decodeToken(this.token);
-    const userId = decodedToken['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier']
-    this.api.getSidebarInfo(parseInt(userId)).subscribe(res=> {
-      if(res.status === 'Success') {
-        this.userInfo = res.data;
-      }
-    });
+    const userId = decodedToken?.['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier']
+    if(userId != null) {
+      this.api.getSidebarInfo(parseInt(userId)).subscribe(res=> {
+        if(res.status === 'Success') {
+          this.userInfo = res.data;
+        }
+      });
 
-    this.orderService.getCount().subscribe(res => {
-      this.orderService.setCount(res['data']);
-      this.orderService.getObservableCount().subscribe(count => {
-        this.totalItem = count;
-      }
-      );
-    });
+      this.orderService.getCount().subscribe(res => {
+        this.orderService.setCount(res['data']);
+        this.orderService.getObservableCount().subscribe(count => {
+          this.totalItem = count;
+        }
+        );
+      });
+    }
+
+    
   }
   isLoggedIn() {
     this.api.checkAuth().subscribe(res=> {

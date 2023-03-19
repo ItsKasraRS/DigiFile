@@ -56,6 +56,9 @@ import { EditProfileComponent } from './Pages/user/edit-profile/edit-profile.com
 import { ChangePasswordComponent } from './Pages/user/change-password/change-password.component';
 import { OrderHistoryComponent } from './Pages/user/order-history/order-history.component';
 import { PaymentResultComponent } from './Pages/cart/payment-result/payment-result.component';
+import { CommentService } from './services/comment/comment.service';
+import { UserCommentsComponent } from './Pages/user/user-comments/user-comments.component';
+import { ComingSoonComponent } from './Layouts/coming-soon/coming-soon.component';
 
 @NgModule({
   declarations: [
@@ -77,11 +80,14 @@ import { PaymentResultComponent } from './Pages/cart/payment-result/payment-resu
     ChangePasswordComponent,
     OrderHistoryComponent,
     PaymentResultComponent,
-    //Pipes
-    CategoriesFilter,
     SingleProductComponent,
     AllProductsComponent,
     RedirectComponent,
+    UserCommentsComponent,
+    ComingSoonComponent,
+
+    //Pipes
+    CategoriesFilter,
   ],
   imports: [
     HttpClientModule,
@@ -115,6 +121,7 @@ import { PaymentResultComponent } from './Pages/cart/payment-result/payment-resu
     ProductService,
     CategoryService,
     OrderService,
+    CommentService,
     AppGuard
   ],
   bootstrap: [AppComponent]

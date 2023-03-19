@@ -9,6 +9,7 @@ import { OrderService } from 'src/app/services/order/order.service';
 })
 export class PaymentResultComponent implements OnInit {
   paymentStatus;
+  isCancelled = false;;
   constructor(private activatedRoute: ActivatedRoute, private orderService: OrderService) { }
 
   ngOnInit() {
@@ -18,13 +19,21 @@ export class PaymentResultComponent implements OnInit {
         if(res.transactionStatus != null) {
           if(res.transactionStatus['status'] === true) {
             this.paymentStatus = true;
+            this.orderService.setCount(0);
           }
           else {
             this.paymentStatus = false;
+            this.orderService.setCount(0);
           }
         }
         else {
-          this.paymentStatus = false;
+          if(res?.status === 'Cancelled') {
+            this.isCancelled = true;
+          }
+          else {
+            this.orderService.setCount(0);
+            this.paymentStatus = false;
+          }
         }
       })
     })

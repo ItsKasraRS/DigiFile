@@ -14,12 +14,12 @@
         <li routerLinkActive="active"><a routerLink="/user/edit-profile"><i class="far fa-user-edit" style="margin-right: 10px;"></i>Edit profile</a></li>
         <li routerLinkActive="active"><a routerLink="/user/change-password"><i class="far fa-lock" style="margin-right: 10px;"></i>Change password</a></li>
         <li routerLinkActive="active"><a routerLink="/user/order-history"><i class="far fa-file" style="margin-right: 10px;"></i>My orders</a></li>
-        <li><a href="#"><i class="far fa-comment" style="margin-right: 10px;"></i>Comments</a></li>
-        <li><a href="#"><i class="far fa-headphones" style="margin-right: 10px;"></i>Tickets</a></li>
+        <li routerLinkActive="active"><a routerLink="/user/comments"><i class="far fa-comment" style="margin-right: 10px;"></i>Comments</a></li>
+        <li><a routerLink="/coming-soon"><i class="far fa-headphones" style="margin-right: 10px;"></i>Tickets</a></li>
         <li><a class="text-danger cursor-pointer" (click)="logout()"><i class="far fa-sign-out" style="margin-right: 10px;"></i>Sign out</a></li>
     </ul>
     <div style="margin: 10px 20px;">
-        <button class="CBtn CBtn-block CBtn-light CBtn-warning" style="border-radius: 3px;"><i class="far fa-user-plus" style="margin-right: 10px;"></i>Become a seller</button>
+        <button routerLink="/coming-soon" class="CBtn CBtn-block CBtn-light CBtn-warning" style="border-radius: 3px;"><i class="far fa-user-plus" style="margin-right: 10px;"></i>Become a seller</button>
     </div>
     
 </aside>

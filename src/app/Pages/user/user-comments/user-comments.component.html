@@ -1,0 +1,38 @@
+<div class="container" style="margin-top: 75px;">
+  <div class="row justify-content-md-center justify-content-lg-between">
+      <div class="col-12 col-md-8 col-lg-3">
+          <app-user-sidebar></app-user-sidebar>
+      </div>
+      <div class="col-12 col-md-12 col-lg-8">
+          <div class="CPanel">
+              <div class="CP_header">
+                  <header>
+                      <span>My comments</span>
+                  </header>
+              </div>
+              <div class="CP_body">
+                  <table class="custom-table">
+                    <thead>
+                      <tr>
+                        <th>Product</th>
+                        <th style="width: 300px;">Comment</th>
+                        <th>Status</th>
+                        <th>Create Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of comments">
+                        <td><a class="comment-product">{{item['productTitle']}}</a></td>
+                        <td>{{item['text']}}</td>
+                        <td>
+                          <span [ngClass]="{'comment-waiting': item['status'] === 'Waiting', 'comment-approved': item['status'] === 'Approved', 'comment-denied': item['status'] === 'Denied'}">{{item['status']}}</span>
+                        </td>
+                        <td>{{item['createDate'] | date}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

@@ -24,10 +24,9 @@ export class CartComponent implements OnInit {
       if(this.cartItems !== null) {
         for (var index = 0; index < this.cartItems.length; index++) {
           const price = this.cartItems[index].price;
+
           this.subTotal = Math.round((this.subTotal + price)*100)/100;
-          console.log(this.subTotal)
           this.totalPrice = Math.round((this.totalPrice + price)*100)/100;
-          // console.log(parseFloat(this.totalPrice))
         }
       }
     })

@@ -13,6 +13,9 @@
           <div class="CAlert CAlert-error mt-3" *ngIf="paymentStatus != null && !paymentStatus">
             The payment encountered an error.
           </div>
+          <div class="CAlert CAlert-error mt-3" *ngIf="isCancelled">
+            You cancelled the payment
+          </div>
         </div>
       </div>
     </div>

@@ -1,50 +1,53 @@
 <div class="container" style="margin-top: 75px;">
-  <div class="row">
-      <div class="col-12 col-md-6 col-lg-8">
-          <div class="cart-item" *ngFor="let item of cartItems">
-              <div class="container-fluid">
-                  <div class="row">
-                      <div class="col-12 col-lg-4">
-                          <div class="cart-image">
-                              <img [src]="imagePath + item.image" style="width: 100%;border-radius: 20px;">
-                          </div>
-                      </div>
-                      <div class="col-12 col-lg-8">
-                          <div class="cart-detail">
-                              <p style="width: 100%;font-weight: 500;">{{item.title}}</p>
-                              <p style="width: 100%;color: #4962ff;font-weight: 500;">By: Kasra</p>
-                              <div class="cart-options" style="width: 100%;">
-                                  <div class="cart-remove">
-                                      <a class="clickable" (click)="removeItemFromCart(item.id)"><i class="far fa-trash"></i></a>
-                                  </div>
-                                  <div class="cart-price">
-                                      <span style="color: #4962ff;font-weight: 500;">{{item.price}}$</span>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4">
-          <div class="checkout">
-              <div class="checkout-header">
-                  Your Summary
-              </div>
-              <div class="checkout-body">
-                  <div class="checkout-subtotal"><span>Subtotal:</span> <span>{{subTotal}}$</span></div>
-                  <br>
-                  <div class="checkout-discount"><span>Discount:</span> <span>5.99$</span></div>
-                  <hr>
-                  <div class="checkout-price" style="font-weight: 600;"><span>Estimated Total: </span><span style="color: #4962ff;font-weight: 600;">{{totalPrice}}$</span></div>
-                  <br>
-                  <br>
-                  <div class="checkout-button">
-                      <button class="CBtn CBtn-light CBtn-warning CBtn-block" (click)="checkoutRequest()"><i class="far fa-credit-card" style="margin-right: 10px;"></i>Checkout</button>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+    <div class="row" *ngIf="cartItems?.length <= 0">
+        Your cart is empty
+    </div>
+    <div class="row" *ngIf="cartItems?.length > 0">
+        <div class="col-12 col-md-6 col-lg-8">
+            <div class="cart-item" *ngFor="let item of cartItems">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-lg-4">
+                            <div class="cart-image">
+                                <img [src]="imagePath + item.image" style="width: 100%;border-radius: 20px;">
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-8">
+                            <div class="cart-detail">
+                                <p style="width: 100%;font-weight: 500;">{{item.title}}</p>
+                                <p style="width: 100%;color: #4962ff;font-weight: 500;">By: Kasra</p>
+                                <div class="cart-options" style="width: 100%;">
+                                    <div class="cart-remove">
+                                        <a class="clickable" (click)="removeItemFromCart(item.id)"><i class="far fa-trash"></i></a>
+                                    </div>
+                                    <div class="cart-price">
+                                        <span style="color: #4962ff;font-weight: 500;">{{item.price}}$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="checkout">
+                <div class="checkout-header">
+                    Your Summary
+                </div>
+                <div class="checkout-body">
+                    <div class="checkout-subtotal"><span>Subtotal:</span> <span>{{subTotal}}$</span></div>
+                    <br>
+                    <div class="checkout-discount"><span>Discount:</span> <span>0.00$</span></div>
+                    <hr>
+                    <div class="checkout-price" style="font-weight: 600;"><span>Estimated Total: </span><span style="color: #4962ff;font-weight: 600;">{{totalPrice}}$</span></div>
+                    <br>
+                    <br>
+                    <div class="checkout-button">
+                        <button class="CBtn CBtn-light CBtn-warning CBtn-block" (click)="checkoutRequest()"><i class="far fa-credit-card" style="margin-right: 10px;"></i>Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

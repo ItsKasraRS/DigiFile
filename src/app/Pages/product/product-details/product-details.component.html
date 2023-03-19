@@ -1,27 +1,29 @@
 <div class="container mt-5 mb-5">
   <div class="row">
     <div class="col-12 col-md-8 col-lg-5">
-      <section id="main-carousel" class="splide" aria-label="My Awesome Gallery">
-        <div class="splide__track">
-          <ul class="splide__list">
-            <li class="splide__slide">
-              <img [src]="imagePath + product['image']" alt="product picture">
-            </li>
-            <li class="splide__slide" *ngFor="let item of gallery">
-              <img [src]="galleryPath + item['galleryImage']" [alt]="product['title']">
-            </li>
-          </ul>
-        </div>
-      </section>
-      
-      <ul id="thumbnails" class="thumbnails">
-        <li class="thumbnail">
-          <img [src]="imagePath + product['image']" alt="product picture">
-        </li>
-        <li class="thumbnail" *ngFor="let item of gallery">
-          <img [src]="galleryPath + item['galleryImage']" [alt]="product['title']">
-        </li>
-      </ul>
+      <div class="product-gallery">
+        <section id="main-carousel" class="splide" aria-label="My Awesome Gallery">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img [src]="imagePath + product['image']" alt="product picture">
+              </li>
+              <li class="splide__slide" *ngFor="let item of gallery">
+                <img [src]="galleryPath + item['galleryImage']" [alt]="product['title']">
+              </li>
+            </ul>
+          </div>
+        </section>
+        
+        <ul id="thumbnails" class="thumbnails">
+          <li class="thumbnail">
+            <img [src]="imagePath + product['image']" alt="product picture">
+          </li>
+          <li class="thumbnail" *ngFor="let item of gallery">
+            <img [src]="galleryPath + item['galleryImage']" [alt]="product['title']">
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="col-12 col-md-1"></div>
     <div class="col-12 col-md-4 col-lg-6">
@@ -65,50 +67,34 @@
             <div class="row">
               <div class="col-12 col-md-8">
                 <div class="comment-section">
-                  <ul>
-                    <li>
-                      <div class="comment-item">
-                        <div class="row">
-                          <div class="col-12">
-                            <div class="comment-profile">
-                              <img src="/assets/images/user.png"> <span>Kasra padashi</span>
-                            </div>
-                          </div>
-                          <div class="col-12">
-                            <div class="comment-text mt-3">
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptatum, nam maxime voluptates recusandae ullam explicabo nobis incidunt repellendus asperiores nisi mollitia modi, aspernatur temporibus error a ex magnam. Doloremque.
-                            </div>
-                          </div>
-                        </div>
+                  <div class="add-commnet">
+                    <div class="CAlert CAlert-warning" *ngIf="!isAuthenticated">Please login to submit your comment</div>
+                    <form *ngIf="isAuthenticated"  [formGroup]="commentForm" (ngSubmit)="addComment()">
+                      <div class="comment-form CForm">
+                        <label>Write your review here</label>
+                        <textarea rows="5" formControlName="text"></textarea>
+                        <span class="text-danger" *ngIf="commentForm.controls.text.errors?.required && commentForm.controls.text.touched">please write your comment first</span>
+                        <span class="text-danger" *ngIf="commentForm.controls.text.errors?.maxlength && commentForm.controls.text.touched">comment can't be more than 1000 characters</span>
+                        <br>
+                        <br>
+                        <button class="CBtn CBtn-primary CBtn-md">Submit Comment</button>
                       </div>
-                    </li>
-                    <li>
+                    </form>
+                  </div>
+                  <br>
+                  <br>
+                  <ul *ngIf="commentsLoaded">
+                    <li *ngFor="let comment of comments">
                       <div class="comment-item">
                         <div class="row">
                           <div class="col-12">
                             <div class="comment-profile">
-                              <img src="/assets/images/user.png"> <span>Kasra padashi</span>
+                              <img [src]="userImage + comment['userAvatar']"> <span>{{comment?.userName}}</span>
                             </div>
                           </div>
                           <div class="col-12">
                             <div class="comment-text mt-3">
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptatum, nam maxime voluptates recusandae ullam explicabo nobis incidunt repellendus asperiores nisi mollitia modi, aspernatur temporibus error a ex magnam. Doloremque.
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="comment-item">
-                        <div class="row">
-                          <div class="col-12">
-                            <div class="comment-profile">
-                              <img src="/assets/images/user.png"> <span>Kasra padashi</span>
-                            </div>
-                          </div>
-                          <div class="col-12">
-                            <div class="comment-text mt-3">
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptatum, nam maxime voluptates recusandae ullam explicabo nobis incidunt repellendus asperiores nisi mollitia modi, aspernatur temporibus error a ex magnam. Doloremque.
+                              {{comment?.text}}
                             </div>
                           </div>
                         </div>
