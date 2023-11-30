@@ -34,7 +34,7 @@ const routes: Routes = [
       { path: 'redirect', component: RedirectComponent, data: { title: 'Redirecting' } },
       { path: 'coming-soon', component: ComingSoonComponent, data: { title: 'Coming soon ...' } },
 
-      // User Panel
+      // User Panel Routes
       { path: 'user/dashboard', component: DashboardComponent, canActivate: [AppGuard], data: { title: 'Dashboard' } },
       { path: 'user/edit-profile', component: EditProfileComponent, canActivate: [AppGuard], data: { title: 'Edit profile' } },
       { path: 'user/change-password', component: ChangePasswordComponent, canActivate: [AppGuard], data: { title: 'Change password' } },
